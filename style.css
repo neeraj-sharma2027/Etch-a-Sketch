@@ -1,0 +1,21 @@
+.p-btn{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#btn{
+    background-color: pink;
+    padding: 12px 24px;
+    font-size: 18px;
+    width: 200px;
+    height: 50px;
+}
+.container{
+    border: 4px solid black;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 12px 24px;
+    height: 600px;
+    width: 900px;
+}
