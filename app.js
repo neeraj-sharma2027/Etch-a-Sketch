@@ -1,15 +1,29 @@
+const parent = document.querySelector(".container");
+const bttn = document.querySelector("#btn");
+
 function makegrid(size){
-    for(let i = 0;i<size;i++){
-        for(let j = 0;j<size;j++){
-            const parent = document.querySelector(".container");
-            const div = document.createElement("div");
-            parent.appendChild(div);
-        }
+    let hw = 960/size ;
+    parent.innerHTML = '';
+    for(let i = 0;i<size*size;i++){
+        const div = document.createElement("div");
+        div.classList.add("box");
+        div.setAttribute("style",` height: ${hw}px; width: ${hw}px;`);
+        div.addEventListener("mouseenter", ()=>{
+            div.style.backgroundColor = "rgb(252, 189, 249)";
+        });
+        parent.appendChild(div);
     }
 }
 
-const bttn = document.querySelector("#btn");
 bttn.addEventListener("click",()=>{
-    let size = prompt("What's the size of grid");
-    makegrid(size);
+    let size = parseInt(prompt("What's the size of grid??"));
+
+    if(isNaN(size) || size < 1 || size > 100){
+        alert("Please Enter any Number beteen 1 and 99");
+    }
+    else{
+        makegrid(size);
+    }
 })
+
+//makegrid(100);
